@@ -5,14 +5,16 @@ import {HttpClientModule} from '@angular/common/http';
 import { ActivatedRoute, RouterModule, Routes} from '@angular/router';
 
 
-
 import { AppComponent } from './app.component';
 import { DatatestComponent } from './datatest/datatest.component';
+import { WidgetComponent } from './widget/widget.component';
+
 import { FlightdataService } from './services/flightdata.service';
+import { LocationService } from './services/location.service';
+
 
 import { MomentPipe } from './pipes/moments.pipe';
 import { TimePipe } from './pipes/flightTime.pipe';
-import { WidgetComponent } from './widget/widget.component';
  
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -23,9 +25,9 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     DatatestComponent,
+    WidgetComponent,
     MomentPipe,
-    TimePipe,
-    WidgetComponent
+    TimePipe
     
   ],
   imports: [
@@ -33,7 +35,8 @@ const routes: Routes = [
     HttpModule
   ],
   providers: [
-    FlightdataService
+    FlightdataService,
+    LocationService
   ],
   bootstrap: [AppComponent]
 })

@@ -20,17 +20,8 @@ export class FlightdataService {
   
   constructor(private http: Http) { }
 
-  // getFlightDetails(){
-  //   return this.flightData.Flights;
-  // }
-
-  // getFlightDetails(){
-  //   return this.http.get('http://travelent-flights.azurewebsites.net/api/GetFlights?EventId=xxxx&OriginCity=MAD&NumberOfOutboundHoursBeforeEvent=12&NumberOfInboundHoursAfterEvent=12', this.options)
-  //   .map((res) => res.json());
-
-  // }
-
-
+    // Get formatted flight details
+    
     getFlightDetails(){
     this.headers.append('x-functions-key', this.token);
     let options = new RequestOptions({ headers: this.headers });

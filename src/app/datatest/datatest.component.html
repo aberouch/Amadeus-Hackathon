@@ -1,0 +1,80 @@
+
+<div class="widget">
+<div class="container">
+  <div class="outbound">
+      <div class="flight-date">{{flightData[0].Outbound.DepartureDate | datepipe}}</div>
+      <div class="timetable">
+        <div class="row-time">
+            <div>{{flightData[0].Outbound.DepartureDate | timepipe}}</div>
+            <div>{{flightData[0].Outbound.ArrivalDate | timepipe}}</div>
+        </div>
+        <div class="row-airport">
+            <div>{{flightData[0].Outbound.Origin.AirportIATACode}}</div>
+            <div>{{flightData[0].Inbound.Origin.AirportIATACode}}</div>
+        </div>
+      </div>
+  </div>
+
+  <div class="inbound">
+      <div class="flight-date">{{flightData[0].Inbound.DepartureDate | datepipe}}</div>
+      <div class="timetable">
+        <div class="row-time">
+            <div>{{flightData[0].Inbound.DepartureDate | timepipe}}</div>
+            <div>{{flightData[0].Inbound.ArrivalDate | timepipe}}</div>
+        </div>
+        <div class="row-airport">
+            <div>{{flightData[0].Inbound.Origin.AirportIATACode}}</div>
+            <div>{{flightData[0].Outbound.Origin.AirportIATACode}}</div>
+        </div>
+      </div>
+  </div>
+
+
+  <div class="price">
+    <div>{{flightData[0].PricePerPax}} <span class="currency">{{flightData[0].Currency}}</span></div>
+  </div>
+ 
+</div>
+
+
+<div class="container">
+    <div class="outbound">
+        <div class="flight-date">{{flightData[0].Outbound.DepartureDate | datepipe}}</div>
+        <div class="timetable">
+          <div class="row-time">
+              <div>{{flightData[0].Outbound.DepartureDate | timepipe}}</div>
+              <div>{{flightData[0].Outbound.ArrivalDate | timepipe}}</div>
+          </div>
+          <div class="row-airport">
+              <div>{{flightData[0].Outbound.Origin.AirportIATACode}}</div>
+              <div>{{flightData[0].Inbound.Origin.AirportIATACode}}</div>
+          </div>
+        </div>
+    </div>
+  
+    <div class="inbound">
+        <div class="flight-date">{{flightData[0].Inbound.DepartureDate | datepipe}} </div>
+        <div class="timetable">
+          <div class="row-time">
+              <div>{{flightData[0].Inbound.DepartureDate | timepipe}}</div>
+              <div>{{flightData[0].Inbound.ArrivalDate | timepipe}}</div>
+          </div>
+          <div class="row-airport">
+              <div>{{flightData[0].Inbound.Origin.AirportIATACode}}</div>
+              <div>{{flightData[0].Outbound.Origin.AirportIATACode}}</div>
+          </div>
+        </div>
+    </div>
+  
+  
+    <div class="price">
+      <div>{{flightData[0].PricePerPax}} <span class="currency">{{flightData[0].Currency}}</span></div>
+    </div>
+
+  
+   
+  </div>
+</div>
+<!-- {{flightData[0].Outbound.DepartureDate}} -->
+
+

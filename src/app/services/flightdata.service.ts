@@ -37,7 +37,7 @@ export class FlightdataService {
       return this.http.get(this.url_early).map((res) => res.json())
     }
     if(horas===72){
-      return this.http.get(this.url_early).map((res) => res.json())
+      return this.http.get(this.url_long).map((res) => res.json())
     }
 }
 }

@@ -1,6 +1,7 @@
 .container {
-  width:600px;
-
+  
+  min-width:400px;
+  max-width: 80vw;
   /* background-color: gold; */
 }
 

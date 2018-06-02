@@ -14,6 +14,7 @@ export class WidgetComponent implements OnInit {
   flightData : any;
   flightLong: any;
   
+  flightsLonger$:Observable<any>;
   flightsEarly$:Observable<any>;
   flights$:Observable<any>;
   flights:Observable<any>;
@@ -27,8 +28,8 @@ export class WidgetComponent implements OnInit {
 
   ngOnInit() {
     this.getFlightData(12);
-    this.getFlightEarly(48);
-    this.getFlightLonger(72);
+    
+    
     // this.getUserLocation();
   }
 
@@ -36,6 +37,7 @@ export class WidgetComponent implements OnInit {
     this.flights$ = this.flightService.getFlightDetails(12);
     this.flightService.getFlightDetails(12).subscribe(flightData =>  {
       this.flightData = (flightData.Flights)
+      this.getFlightEarly(48);
     });
   }
 
@@ -44,17 +46,16 @@ export class WidgetComponent implements OnInit {
     this.flightsEarly$ = this.flightService.getFlightDetails(48);
     this.flightService.getFlightDetails(48).subscribe(flightDataEarly =>  {
       this.flightEarly = (flightDataEarly.Flights)
-
+      this.getFlightLonger(72);
 
     });
   }
 
   getFlightLonger(hours){
-    this.flightsEarly$ = this.flightService.getFlightDetails(72);
+    this.flightsLonger$ = this.flightService.getFlightDetails(72);
     this.flightService.getFlightDetails(72).subscribe(flightDataEarly =>  {
-      this.flightEarly = (flightDataEarly.Flights)
-  
-
+      this.flightLong = (flightDataEarly.Flights)
+    
     });
   }
 

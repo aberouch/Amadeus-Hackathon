@@ -1,7 +1,10 @@
 <div class="container">
-  <app-datatest></app-datatest>
-  <app-datatest></app-datatest>
-  <app-datatest></app-datatest>
+  <app-datatest [singleFlight]="flightData"></app-datatest>
+  <app-datatest [singleFlight]="flightEarly"></app-datatest>
+  <app-datatest [singleFlight]="flightLong"></app-datatest>
+  
+  <footer> 
+      <img height="10" src="../../assets/poweredby.png">
+  </footer>
 </div>
 
-<img height="10" src="../../assets/poweredby.png">

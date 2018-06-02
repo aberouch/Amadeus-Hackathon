@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { FlightdataService } from '../services/flightdata.service';
 import * as moment from 'moment';
@@ -12,23 +12,11 @@ import * as moment from 'moment';
 
 export class DatatestComponent implements OnInit {
 
-    flights$:Observable<any>;
-    flights:Observable<any>;
+  @Input() singleFlight: any;
 
-    flightData : any;
-    now = moment();
+  constructor( ) { }
 
-  constructor(
-    public flightService : FlightdataService
-  ) { }
+  ngOnInit() {}
 
-  ngOnInit() {
-    this.getFlightData();
-  }
-
-  getFlightData(){
-    this.flights$ = this.flightService.getFlightDetails();
-    this.flightService.getFlightDetails().subscribe(flightData =>  this.flightData = (flightData.Flights));
-  }
-
+  
 }

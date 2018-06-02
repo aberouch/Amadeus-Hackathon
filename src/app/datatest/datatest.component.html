@@ -1,38 +1,45 @@
-<div *ngIf="flightData" class="widget">
+<div *ngIf="!singleFlight" class="widget">
+  
+    <div class="loading-container">
+      <img height="70" src="https://montpellier-airport.com/typo3conf/ext/shopbox/Resources/Public/Images/loader.gif">
+      </div>
+</div>
+
+<div *ngIf="singleFlight" class="widget">
   
   <div class="container">
     <div class="outbound">
-      <div class="flight-date">{{flightData[0].Outbound.DepartureDate | datepipe}}</div>
+      <div class="flight-date">{{singleFlight[0].Outbound.DepartureDate | datepipe}}</div>
       <div class="timetable">
         <div class="row-time">
-          <div>{{flightData[0].Outbound.DepartureDate | timepipe}}</div>
-          <div>{{flightData[0].Outbound.ArrivalDate | timepipe}}</div>
+          <div>{{singleFlight[0].Outbound.DepartureDate | timepipe}}</div>
+          <div>{{singleFlight[0].Outbound.ArrivalDate | timepipe}}</div>
         </div>
         <div class="row-airport">
-          <div>{{flightData[0].Outbound.Origin.AirportIATACode}}</div>
-          <div>{{flightData[0].Inbound.Origin.AirportIATACode}}</div>
+          <div>{{singleFlight[0].Outbound.Origin.AirportIATACode}}</div>
+          <div>{{singleFlight[0].Inbound.Origin.AirportIATACode}}</div>
         </div>
       </div>
     </div>
 
     <div class="inbound">
-      <div class="flight-date">{{flightData[0].Inbound.DepartureDate | datepipe}}</div>
+      <div class="flight-date">{{singleFlight[0].Inbound.DepartureDate | datepipe}}</div>
       <div class="timetable">
         <div class="row-time">
-          <div>{{flightData[0].Inbound.DepartureDate | timepipe}}</div>
-          <div>{{flightData[0].Inbound.ArrivalDate | timepipe}}</div>
+          <div>{{singleFlight[0].Inbound.DepartureDate | timepipe}}</div>
+          <div>{{singleFlight[0].Inbound.ArrivalDate | timepipe}}</div>
         </div>
         <div class="row-airport">
-          <div>{{flightData[0].Inbound.Origin.AirportIATACode}}</div>
-          <div>{{flightData[0].Outbound.Origin.AirportIATACode}}</div>
+          <div>{{singleFlight[0].Inbound.Origin.AirportIATACode}}</div>
+          <div>{{singleFlight[0].Outbound.Origin.AirportIATACode}}</div>
         </div>
       </div>
     </div>
 
 
     <div class="price">
-      <div>{{flightData[0].PricePerPax}}
-        <span class="currency">{{flightData[0].Currency}}</span>
+      <div>{{singleFlight[0].PricePerPax}}
+        <span class="currency">{{singleFlight[0].Currency}}</span>
       </div>
     </div>
 
